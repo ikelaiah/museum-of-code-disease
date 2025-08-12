@@ -1,4 +1,4 @@
-// ex-001-enterprise-hell.cs AUTOPSY VERSION
+// ex-001-enterprise-headache.cs AUTOPSY VERSION
 // INTENTIONALLY AWFUL: C# enterprise bloat and exception swallowing disasters
 // This celebrates every anti-pattern, code smell, and enterprise nightmare in C#
 // AUTOPSY: Same nightmare code with detailed explanations of C# enterprise anti-patterns
@@ -15,7 +15,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Service.Provider
+namespace Museum.Of.Code.Disease.Enterprise.Headache.Nightmare.Factory.Manager.Service.Provider
 {
     // PROBLEM: Global static chaos
     public static class GlobalChaosManager
@@ -44,7 +44,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
         private readonly IPerformanceCounterFactory _perfCounterFactory;
         // PROBLEM: 10+ dependencies indicate this class does too much
 
-        // PROBLEM: Constructor injection hell
+        // PROBLEM: Constructor injection headache
         public EnterpriseBusinessLogicManagerFactoryProviderService(
             IDataAccessLayerFactory dalFactory,
             IBusinessLogicServiceProvider blProvider,
@@ -71,7 +71,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
         }
         // FIX: Break into smaller classes; use composition; limit dependencies per class
 
-        // PROBLEM: Exception swallowing hell
+        // PROBLEM: Exception swallowing headache
         public string ProcessBusinessLogicWithEnterprisePatterns(object input)
         {
             try
@@ -163,7 +163,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
         }
         // FIX: Use parameterized queries; handle specific exceptions; dispose all resources
 
-        // PROBLEM: Connection leak hell
+        // PROBLEM: Connection leak headache
         public void LeakConnections()
         {
             for (int i = 0; i < 100; i++) // PROBLEM: Create 100 connections
@@ -321,7 +321,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
         // FIX: Cache reflection results; use compiled expressions; avoid reflection in hot paths
     }
 
-    // PROBLEM: Configuration and magic strings hell
+    // PROBLEM: Configuration and magic strings headache
     public class ConfigurationHellManager
     {
         // PROBLEM: Magic strings everywhere - no compile-time checking
@@ -387,7 +387,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
                 // PROBLEM: SQL injection attempt
                 var userData = dbManager.GetUserData("admin'; DROP TABLE Users; --", "password"); // PROBLEM: SQL injection attack
                 
-                // PROBLEM: Async hell
+                // PROBLEM: Async headache
                 var asyncResult = threadManager.AsyncHell().Result; // PROBLEM: Potential deadlock with .Result
                 
                 Console.WriteLine("🎭 C# CHAOS COMPLETE 🎭");
@@ -414,7 +414,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
         // FIX: Use dependency injection; handle specific exceptions; don't force GC; provide meaningful error messages
     }
 
-    // PROBLEM: Empty interfaces for dependency injection hell - marker interfaces with no contracts
+    // PROBLEM: Empty interfaces for dependency injection headache - marker interfaces with no contracts
     public interface IDataAccessLayerFactory { } // PROBLEM: Empty interface - no contract
     public interface IBusinessLogicServiceProvider { } // PROBLEM: Vague naming
     public interface IConfigurationManagerService { } // PROBLEM: No methods defined

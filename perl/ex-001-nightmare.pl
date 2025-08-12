@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# ex-001-sigil-hell.pl
+# ex-001-sigil-headache.pl
 # INTENTIONALLY AWFUL: Perl sigil chaos and regex madness
 # This celebrates every "write-only" Perl anti-pattern known to humanity
 # WARNING: This code will make your eyes bleed and your brain melt
@@ -20,7 +20,7 @@ sub print { CORE::print reverse @_ }  # reverse all output
 # The infamous one-liner disasters
 $_ = "Hello World"; tr/a-z/A-Z/; s/(.)/reverse $1/ge; print;
 
-# Regex hell with maximum backtracking
+# Regex headache with maximum backtracking
 sub regex_hell {
     my $evil = qr/^(a+)+$/;  # catastrophic backtracking
     my $input = 'a' x 20 . 'b';
@@ -45,7 +45,7 @@ sub sigil_chaos {
     print $arr[0];       # @arr[0] 
     print $arr{7};       # %arr{7}
     
-    # Context switching hell
+    # Context switching headache
     my $scalar = @arr;   # array in scalar context = length
     my @array = %arr;    # hash in array context = flattened
     my $ref = \@arr;     # reference
@@ -90,7 +90,7 @@ sub reference_hell {
         regex => qr/\d+/
     };
     
-    # Dereference hell
+    # Dereference headache
     print @{$complex->{arr}};
     print ${$complex->{arr}}[2]->{nested}->[1];
     print $complex->{code}->(42);

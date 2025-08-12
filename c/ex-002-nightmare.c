@@ -1,4 +1,4 @@
-// ex-002-preprocessor-hell.c
+// ex-002-preprocessor-headache.c
 // INTENTIONALLY AWFUL: C preprocessor abuse and macro madness
 // This celebrates every #define disaster and macro chaos known to C
 // WARNING: This code will break your sanity and corrupt your logic

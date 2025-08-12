@@ -1,4 +1,4 @@
-// ex-001-memory-hell.c AUTOPSY VERSION
+// ex-001-memory-headache.c AUTOPSY VERSION
 // INTENTIONALLY AWFUL: C memory management disasters and undefined behavior
 // This celebrates every segfault, buffer overflow, and memory leak known to C
 // AUTOPSY: Same nightmare code with detailed explanations of C's dangerous features

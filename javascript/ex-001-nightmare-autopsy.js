@@ -1,4 +1,4 @@
-// ex-001-type-coercion-hell.js AUTOPSY VERSION
+// ex-001-type-coercion-headache.js AUTOPSY VERSION
 // INTENTIONALLY AWFUL: JavaScript type coercion and prototype pollution paradise
 // This file celebrates every JavaScript WTF moment and anti-pattern known to humanity
 // AUTOPSY: Same nightmare code with detailed explanations of JavaScript's dark magic
@@ -122,8 +122,8 @@ function thisHell() {
 }
 // FIX: Use arrow functions, .bind(), or explicit this parameters
 
-// PROBLEM: Async callback hell - pyramid of doom
-function callbackHell(callback) {                        // PROBLEM: Nested callbacks create unreadable code
+// PROBLEM: Async callback headache - pyramid of doom
+function callbackHeadache(callback) {                    // PROBLEM: Nested callbacks create unreadable code
     setTimeout(function() {
         console.log('Level 1');
         setTimeout(function() {                           // PROBLEM: Nesting level 2
@@ -311,7 +311,7 @@ function main() {
     scopingHell();                                        // PROBLEM: Hoisting and scoping issues
     thisHell();                                           // PROBLEM: this binding confusion
     
-    callbackHell(function(result) {                       // PROBLEM: Callback pyramid
+    callbackHeadache(function(result) {                   // PROBLEM: Callback pyramid
         console.log('Callback result:', result);
     });
     
@@ -349,7 +349,7 @@ if (typeof module !== 'undefined' && module.exports) {   // PROBLEM: Check for N
         coercionChaos: coercionChaos,
         scopingHell: scopingHell,
         thisHell: thisHell,
-        callbackHell: callbackHell,
+        callbackHeadache: callbackHeadache,
         prototypeHell: prototypeHell,
         errorHell: errorHell,
         domHell: domHell,
@@ -371,7 +371,7 @@ global && (global.CHAOS_COMPLETE = true);                // PROBLEM: Pollute Nod
 // 3. **Global Variable Soup**: Too many global variables with confusing names
 // 4. **Hoisting Confusion**: var hoisting and function declaration hoisting
 // 5. **this Binding Issues**: Lost this context in callbacks and inner functions
-// 6. **Callback Hell**: Deeply nested callbacks creating pyramid of doom
+// 6. **Callback Headache**: Deeply nested callbacks creating pyramid of doom
 // 7. **Error Handling Disasters**: Throwing non-Error objects, swallowing errors
 // 8. **Memory Leaks**: Closures over large data, uncleaned timers, circular refs
 // 9. **Security Issues**: eval abuse, XSS vulnerabilities, unsafe regex

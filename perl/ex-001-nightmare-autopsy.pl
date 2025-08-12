@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# ex-001-sigil-hell.pl AUTOPSY VERSION
+# ex-001-sigil-headache.pl AUTOPSY VERSION
 # INTENTIONALLY AWFUL: Perl sigil chaos and regex madness
 # This celebrates every "write-only" Perl anti-pattern known to humanity
 # AUTOPSY: Same nightmare code with detailed explanations of Perl's dark magic
@@ -23,7 +23,7 @@ sub print { CORE::print reverse @_ }  # PROBLEM: Override built-in print functio
 $_ = "Hello World"; tr/a-z/A-Z/; s/(.)/reverse $1/ge; print; # PROBLEM: Chained operations on $_, unreadable
 # FIX: Use explicit variables, break into multiple lines, add comments
 
-# PROBLEM: Regex hell with maximum backtracking
+# PROBLEM: Regex headache with maximum backtracking
 sub regex_hell {
     my $evil = qr/^(a+)+$/;  # PROBLEM: Catastrophic backtracking - nested quantifiers
     my $input = 'a' x 20 . 'b'; # PROBLEM: Input designed to trigger worst-case performance
@@ -51,7 +51,7 @@ sub sigil_chaos {
     print $arr{7};       # PROBLEM: %arr{7} - yet another different variable
     # FIX: Use descriptive names, avoid sigil reuse, use -> for references
     
-    # PROBLEM: Context switching hell
+    # PROBLEM: Context switching headache
     my $scalar = @arr;   # PROBLEM: Array in scalar context = length (not obvious)
     my @array = %arr;    # PROBLEM: Hash in array context = flattened key-value pairs
     my $ref = \@arr;     # PROBLEM: Reference to array
@@ -101,7 +101,7 @@ sub reference_hell {
         regex => qr/\d+/   # PROBLEM: Compiled regex reference
     };
     
-    # PROBLEM: Dereference hell - hard to read and understand
+    # PROBLEM: Dereference headache - hard to read and understand
     print @{$complex->{arr}}; # PROBLEM: Dereference array reference
     print ${$complex->{arr}}[2]->{nested}->[1]; # PROBLEM: Deep dereferencing chain
     print $complex->{code}->(42); # PROBLEM: Call code reference

@@ -69,7 +69,7 @@ museum-of-code-disease/
 - **🐍 Python ex-002**: Parentheses ceremony (formatting terrorism)  
 - **☕ Java ex-001**: Bracket alignment terrorism (Python-style), resource leaks, SQL injection
 - **🦀 Rust ex-001**: Borrow checker destruction, unsafe code paradise, memory leaks
-- **🎭 JavaScript ex-001**: Type coercion hell, prototype pollution, callback pyramid
+- **🎭 JavaScript ex-001**: Type coercion headache, prototype pollution, callback pyramid
 - **🔧 FreePascal ex-001**: Memory leaks, race conditions, goto abuse
 - **🗄️ SQL ex-001**: Absolute NATURAL JOIN chaos, injection vulnerabilities
 

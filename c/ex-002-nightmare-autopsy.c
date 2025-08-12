@@ -1,4 +1,4 @@
-// ex-002-preprocessor-hell.c AUTOPSY VERSION
+// ex-002-preprocessor-headache.c AUTOPSY VERSION
 // INTENTIONALLY AWFUL: C preprocessor abuse and macro madness
 // This celebrates every #define disaster and macro chaos known to C
 // AUTOPSY: Same nightmare code with detailed explanations of preprocessor evil

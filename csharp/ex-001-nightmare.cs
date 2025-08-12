@@ -1,4 +1,4 @@
-// ex-001-enterprise-hell.cs
+// ex-001-enterprise-headache.cs
 // INTENTIONALLY AWFUL: C# enterprise bloat and exception swallowing disasters
 // This celebrates every anti-pattern, code smell, and enterprise nightmare in C#
 // WARNING: This code will make your IDE crash and your soul weep
@@ -15,7 +15,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Service.Provider
+namespace Museum.Of.Code.Disease.Enterprise.Headache.Nightmare.Factory.Manager.Service.Provider
 {
     // Global static chaos
     public static class GlobalChaosManager
@@ -42,7 +42,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
         private readonly IAuditTrailManagerService _auditService;
         private readonly IPerformanceCounterFactory _perfCounterFactory;
 
-        // Constructor injection hell
+        // Constructor injection headache
         public EnterpriseBusinessLogicManagerFactoryProviderService(
             IDataAccessLayerFactory dalFactory,
             IBusinessLogicServiceProvider blProvider,
@@ -67,7 +67,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
             _perfCounterFactory = perfCounterFactory ?? throw new ArgumentNullException(nameof(perfCounterFactory));
         }
 
-        // Exception swallowing hell
+        // Exception swallowing headache
         public string ProcessBusinessLogicWithEnterprisePatterns(object input)
         {
             try
@@ -153,7 +153,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
             }
         }
 
-        // Connection leak hell
+        // Connection leak headache
         public void LeakConnections()
         {
             for (int i = 0; i < 100; i++)
@@ -304,7 +304,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
         }
     }
 
-    // Configuration and magic strings hell
+    // Configuration and magic strings headache
     public class ConfigurationHellManager
     {
         // Magic strings everywhere
@@ -368,7 +368,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
                 // SQL injection attempt
                 var userData = dbManager.GetUserData("admin'; DROP TABLE Users; --", "password");
                 
-                // Async hell
+                // Async headache
                 var asyncResult = threadManager.AsyncHell().Result;  // potential deadlock
                 
                 Console.WriteLine("🎭 C# CHAOS COMPLETE 🎭");
@@ -394,7 +394,7 @@ namespace Museum.Of.Code.Disease.Enterprise.Hell.Nightmare.Factory.Manager.Servi
         }
     }
 
-    // Empty interfaces for dependency injection hell
+    // Empty interfaces for dependency injection headache
     public interface IDataAccessLayerFactory { }
     public interface IBusinessLogicServiceProvider { }
     public interface IConfigurationManagerService { }

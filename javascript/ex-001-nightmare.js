@@ -1,4 +1,4 @@
-// ex-001-type-coercion-hell.js
+// ex-001-type-coercion-headache.js
 // INTENTIONALLY AWFUL: JavaScript type coercion and prototype pollution paradise
 // This file celebrates every JavaScript WTF moment and anti-pattern known to humanity
 // WARNING: This code will make your browser cry and your sanity evaporate
@@ -117,8 +117,8 @@ function thisHell() {
     detached();                                           // this is global/undefined
 }
 
-// Async callback hell
-function callbackHell(callback) {
+// Async callback headache
+function callbackHeadache(callback) {
     setTimeout(function() {
         console.log('Level 1');
         setTimeout(function() {
@@ -299,7 +299,7 @@ function main() {
     scopingHell();
     thisHell();
     
-    callbackHell(function(result) {
+    callbackHeadache(function(result) {
         console.log('Callback result:', result);
     });
     
@@ -337,7 +337,7 @@ if (typeof module !== 'undefined' && module.exports) {
         coercionChaos: coercionChaos,
         scopingHell: scopingHell,
         thisHell: thisHell,
-        callbackHell: callbackHell,
+        callbackHeadache: callbackHeadache,
         prototypeHell: prototypeHell,
         errorHell: errorHell,
         domHell: domHell,

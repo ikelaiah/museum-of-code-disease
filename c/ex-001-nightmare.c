@@ -1,4 +1,4 @@
-// ex-001-memory-hell.c
+// ex-001-memory-headache.c
 // INTENTIONALLY AWFUL: C memory management disasters and undefined behavior
 // This celebrates every segfault, buffer overflow, and memory leak known to C
 // WARNING: This code will crash your system and corrupt your memory

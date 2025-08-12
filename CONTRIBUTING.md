@@ -108,13 +108,13 @@ Before merging, we'll check that exhibits:
 
 ## 💡 Exhibit Ideas We'd Love
 
-- **JavaScript**: Prototype pollution, `==` vs `===` chaos, callback hell
+- **JavaScript**: Prototype pollution, `==` vs `===` chaos, callback headache
 - **Java**: Null pointer exceptions, resource leaks, serialization disasters
 - **C/C++**: Buffer overflows, memory management nightmares, undefined behavior
 - **Go**: Goroutine leaks, interface{} abuse, error handling anti-patterns
 - **Rust**: Fighting the borrow checker (and losing)
 - **PHP**: Register globals, SQL injection classics, type juggling
-- **CSS**: Specificity wars, layout disasters, responsive breakpoints from hell
+- **CSS**: Specificity wars, layout disasters, responsive breakpoints from headache
 - **Shell**: Command injection, quoting nightmares, portability disasters
 
 ## 🎭 Tone and Style
