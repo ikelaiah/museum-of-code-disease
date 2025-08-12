@@ -106,7 +106,7 @@ Link to a clean version or gist.
 
 - {prompt or exercise idea}
 - {discussion questions}
-
+```
 
 ---
 
