@@ -80,33 +80,19 @@ museum-of-code-disease/
 
 ## Exhibit template
 
-Put this in `templates/EXHIBIT_TEMPLATE.md` and copy for new exhibits.
-
-```markdown
-# Exhibit {ID}: {Short title}
-
-**Language:** {Python | Free Pascal | SQL | …}  
-**Tags:** {globals, eval, sql-injection, race-conditions, …}
-
 ## The specimen
 
 Path: `{folder}/ex-{id}-{slug}.{ext}`
 
-## Symptoms (what’s wrong)
+## The autopsy
 
-- [ ] {smell 1: why it’s harmful}
-- [ ] {smell 2: why it’s harmful}
-- [ ] {smell 3: why it’s harmful}
+Path: `{folder}/ex-{id}-{slug}-autopsy.{ext}`
 
-## Safer rewrite (optional)
+Also include:
 
-Link to a clean version or gist.
-
-## Teaching notes
-
-- {prompt or exercise idea}
-- {discussion questions}
-```
+- Symptoms (what’s wrong)
+- Safer rewrite (optional)
+- Teaching notes
 
 ---
 
