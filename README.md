@@ -30,28 +30,39 @@ This repo curates intentionally awful code samples (“exhibits”) across langu
 
 ```bash
 museum-of-code-disease/
+├─ c/
+│  ├─ ex-001-nightmare.c
+│  ├─ ex-001-nightmare-autopsy.c
+│  ├─ ex-002-nightmare.c
+│  └─ ex-002-nightmare-autopsy.c
+├─ csharp/
+│  ├─ ex-001-nightmare.cs
+│  └─ ex-001-nightmare-autopsy.cs
+├─ freepascal/
+│  ├─ ex-001-nightmare.pas
+│  └─ ex-001-nightmare-autopsy.pas
+├─ java/
+│  ├─ ex-001-nightmare.java
+│  └─ ex-001-nightmare-autopsy.java
+├─ javascript/
+│  ├─ ex-001-nightmare.js
+│  └─ ex-001-nightmare-autopsy.js
+├─ perl/
+│  ├─ ex-001-nightmare.pl
+│  └─ ex-001-nightmare-autopsy.pl
 ├─ python/
 │  ├─ ex-001-nightmare.py
 │  ├─ ex-001-nightmare-autopsy.py
 │  ├─ ex-002-lipsy.py
 │  └─ ex-002-lipsy-autopsy.py
-├─ java/
-│  ├─ ex-001-nightmare.java
-│  └─ ex-001-nightmare-autopsy.java
 ├─ rust/
 │  ├─ ex-001-nightmare.rs
 │  └─ ex-001-nightmare-autopsy.rs
-├─ javascript/
-│  ├─ ex-001-nightmare.js
-│  └─ ex-001-nightmare-autopsy.js
-├─ freepascal/
-│  ├─ ex-001-nightmare.pas
-│  └─ ex-001-nightmare-autopsy.pas
 ├─ sql/
 │  ├─ ex-001-evil-joins.sql
 │  └─ ex-001-evil-joins-autopsy.sql
-├─ LICENSE.md
 ├─ CONTRIBUTING.md
+├─ LICENSE.md
 └─ README.md
 ```
 
@@ -65,13 +76,17 @@ museum-of-code-disease/
 
 ## Current Exhibits 🏛️
 
-- **🐍 Python ex-001**: Global chaos, eval() dangers, SQL injection
-- **🐍 Python ex-002**: Parentheses ceremony (formatting terrorism)  
-- **☕ Java ex-001**: Bracket alignment terrorism (Python-style), resource leaks, SQL injection
-- **🦀 Rust ex-001**: Borrow checker destruction, unsafe code paradise, memory leaks
-- **🎭 JavaScript ex-001**: Type coercion headache, prototype pollution, callback pyramid
-- **🔧 FreePascal ex-001**: Memory leaks, race conditions, goto abuse
-- **🗄️ SQL ex-001**: Absolute NATURAL JOIN chaos, injection vulnerabilities
+- **⚙️ [C ex-001](c/ex-001-nightmare.c)**: Memory management nightmares, buffer overflows, pointer chaos
+- **⚙️ [C ex-002](c/ex-002-nightmare.c)**: Advanced memory corruption, race conditions, undefined behavior
+- **🔷 [C# ex-001](csharp/ex-001-nightmare.cs)**: Resource leaks, exception handling disasters, SQL injection
+- **🔧 [FreePascal ex-001](freepascal/ex-001-nightmare.pas)**: Memory leaks, race conditions, goto abuse
+- **☕ [Java ex-001](java/ex-001-nightmare.java)**: Bracket alignment terrorism (Python-style), resource leaks, SQL injection
+- **🎭 [JavaScript ex-001](javascript/ex-001-nightmare.js)**: Type coercion headache, prototype pollution, callback pyramid
+- **🐪 [Perl ex-001](perl/ex-001-nightmare.pl)**: Regular expression madness, cryptic syntax abuse, global variables
+- **🐍 [Python ex-001](python/ex-001-nightmare.py)**: Global chaos, eval() dangers, SQL injection
+- **🐍 [Python ex-002](python/ex-002-lipsy.py)**: Parentheses ceremony (formatting terrorism)  
+- **🦀 [Rust ex-001](rust/ex-001-nightmare.rs)**: Borrow checker destruction, unsafe code paradise, memory leaks
+- **🗄️ [SQL ex-001](sql/ex-001-evil-joins.sql)**: Absolute NATURAL JOIN chaos, injection vulnerabilities
 
 ---
 
