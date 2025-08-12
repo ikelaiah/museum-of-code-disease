@@ -15,7 +15,7 @@ char *global_ptr;
 int *dangling_ptr;
 
 // Buffer overflow paradise
-void buffer_overflow_hell() {
+void buffer_overflow_headache() {
     char buffer[10];
     char input[100] = "This string is way too long for the buffer and will overflow";
     
@@ -30,7 +30,7 @@ void buffer_overflow_hell() {
 }
 
 // Memory leak generators
-void memory_leak_hell() {
+void memory_leak_headache() {
     // Malloc without free
     for(int i = 0; i < 1000; i++) {
         char *leak = malloc(1024);  // 1MB total leak
@@ -45,7 +45,7 @@ void memory_leak_hell() {
 }
 
 // Use after free disasters
-void use_after_free_hell() {
+void use_after_free_headache() {
     char *ptr = malloc(100);
     strcpy(ptr, "hello");
     free(ptr);
@@ -64,7 +64,7 @@ char* return_stack_pointer() {
     return local;  // returning pointer to stack memory!
 }
 
-void dangling_pointer_hell() {
+void dangling_pointer_headache() {
     char *ptr = return_stack_pointer();  // dangling pointer
     printf("Dangling: %s\n", ptr);  // undefined behavior
     
@@ -75,7 +75,7 @@ void dangling_pointer_hell() {
 }
 
 // Array bounds violations
-void array_bounds_hell() {
+void array_bounds_headache() {
     int arr[10];
     
     // Write past end
@@ -94,7 +94,7 @@ void array_bounds_hell() {
 }
 
 // Pointer arithmetic disasters
-void pointer_arithmetic_hell() {
+void pointer_arithmetic_headache() {
     char *ptr = malloc(10);
     
     // Wild pointer arithmetic
@@ -110,7 +110,7 @@ void pointer_arithmetic_hell() {
 }
 
 // String handling disasters
-void string_hell() {
+void string_headache() {
     char dest[5];
     char *src = "This string is way too long";
     
@@ -133,7 +133,7 @@ void dangerous_function() {
     printf("Dangerous function called\n");
 }
 
-void function_pointer_hell() {
+void function_pointer_headache() {
     func_ptr = dangerous_function;
     func_ptr();  // works
     
@@ -149,7 +149,7 @@ void function_pointer_hell() {
 #define UNSAFE_MAX(a,b) ((a) > (b) ? (a) : (b))
 #define EVIL_SWAP(x,y) { int temp = x; x = y; y = temp; }
 
-void macro_hell() {
+void macro_headache() {
     int x = 5, y = 10;
     
     // Side effects in macros
@@ -163,7 +163,7 @@ void macro_hell() {
 }
 
 // Undefined behavior showcase
-void undefined_behavior_hell() {
+void undefined_behavior_headache() {
     // Integer overflow
     int max_int = 2147483647;
     max_int++;  // undefined behavior
@@ -194,7 +194,7 @@ void* thread_function(void* arg) {
     return NULL;
 }
 
-void race_condition_hell() {
+void race_condition_headache() {
     pthread_t threads[10];
     
     for(int i = 0; i < 10; i++) {
@@ -206,7 +206,7 @@ void race_condition_hell() {
 }
 
 // File handling disasters
-void file_hell() {
+void file_headache() {
     FILE *fp = fopen("nonexistent.txt", "r");
     // No error checking
     
@@ -226,18 +226,18 @@ void file_hell() {
 int main() {
     printf("⚡ C NIGHTMARE STARTING ⚡\n");
     
-    buffer_overflow_hell();
-    memory_leak_hell();
-    use_after_free_hell();
-    dangling_pointer_hell();
-    array_bounds_hell();
-    pointer_arithmetic_hell();
-    string_hell();
-    function_pointer_hell();
-    macro_hell();
-    undefined_behavior_hell();
-    race_condition_hell();
-    file_hell();
+    buffer_overflow_headache();
+    memory_leak_headache();
+    use_after_free_headache();
+    dangling_pointer_headache();
+    array_bounds_headache();
+    pointer_arithmetic_headache();
+    string_headache();
+    function_pointer_headache();
+    macro_headache();
+    undefined_behavior_headache();
+    race_condition_headache();
+    file_headache();
     
     printf("🎭 C CHAOS COMPLETE 🎭\n");
     

@@ -148,12 +148,12 @@ $a,      $b,     $c
 sub main {
     print "🐪 PERL NIGHTMARE STARTING 🐪\n";
     
-    regex_hell();
+    regex_headache();
     sigil_chaos();
-    special_vars_hell();
-    reference_hell();
-    file_hell();
-    eval_hell();
+    special_vars_headache();
+    reference_headache();
+    file_headache();
+    eval_headache();
     
     # The ultimate Perl one-liner disasters
     map{print$_}sort{$a<=>$b}grep{/\d/}split//,join'',<>;

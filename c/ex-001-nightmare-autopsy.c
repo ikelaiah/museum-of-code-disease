@@ -16,7 +16,7 @@ int *dangling_ptr; // PROBLEM: Global pointer that will become dangling
 // FIX: Use local variables, initialize pointers to NULL, use descriptive names
 
 // PROBLEM: Buffer overflow paradise
-void buffer_overflow_hell() {
+void buffer_overflow_headache() {
     char buffer[10]; // PROBLEM: Small fixed-size buffer
     char input[100] = "This string is way too long for the buffer and will overflow"; // PROBLEM: 60+ chars
     
@@ -33,7 +33,7 @@ void buffer_overflow_hell() {
 }
 
 // PROBLEM: Memory leak generators
-void memory_leak_hell() {
+void memory_leak_headache() {
     // PROBLEM: Malloc without free
     for(int i = 0; i < 1000; i++) { // PROBLEM: 1000 iterations
         char *leak = malloc(1024);  // PROBLEM: Allocate 1KB each = 1MB total
@@ -50,7 +50,7 @@ void memory_leak_hell() {
 }
 
 // PROBLEM: Use after free disasters
-void use_after_free_hell() {
+void use_after_free_headache() {
     char *ptr = malloc(100); // PROBLEM: Allocate memory
     strcpy(ptr, "hello"); // PROBLEM: Use memory normally
     free(ptr); // PROBLEM: Free the memory
@@ -70,7 +70,7 @@ char* return_stack_pointer() { // PROBLEM: Function returns char*
     return local;  // PROBLEM: Returning pointer to stack memory that will be destroyed!
 } // PROBLEM: local[] is destroyed when function returns
 
-void dangling_pointer_hell() {
+void dangling_pointer_headache() {
     char *ptr = return_stack_pointer();  // PROBLEM: ptr now points to destroyed stack memory
     printf("Dangling: %s\n", ptr);  // PROBLEM: Undefined behavior - stack memory reused
     
@@ -82,7 +82,7 @@ void dangling_pointer_hell() {
 }
 
 // PROBLEM: Array bounds violations
-void array_bounds_hell() {
+void array_bounds_headache() {
     int arr[10]; // PROBLEM: Array of 10 integers (indices 0-9)
     
     // PROBLEM: Write past end of array
@@ -102,7 +102,7 @@ void array_bounds_hell() {
 }
 
 // PROBLEM: Pointer arithmetic disasters
-void pointer_arithmetic_hell() {
+void pointer_arithmetic_headache() {
     char *ptr = malloc(10); // PROBLEM: Allocate 10 bytes
     
     // PROBLEM: Wild pointer arithmetic
@@ -119,7 +119,7 @@ void pointer_arithmetic_hell() {
 }
 
 // PROBLEM: String handling disasters
-void string_hell() {
+void string_headache() {
     char dest[5]; // PROBLEM: 5-byte destination buffer
     char *src = "This string is way too long"; // PROBLEM: 27+ character source
     
@@ -143,7 +143,7 @@ void dangerous_function() {
     printf("Dangerous function called\n");
 }
 
-void function_pointer_hell() {
+void function_pointer_headache() {
     func_ptr = dangerous_function; // PROBLEM: Assign function address
     func_ptr();  // PROBLEM: Works fine
     
@@ -160,7 +160,7 @@ void function_pointer_hell() {
 #define UNSAFE_MAX(a,b) ((a) > (b) ? (a) : (b)) // PROBLEM: Macro evaluates arguments multiple times
 #define EVIL_SWAP(x,y) { int temp = x; x = y; y = temp; } // PROBLEM: Macro without do-while wrapper
 
-void macro_hell() {
+void macro_headache() {
     int x = 5, y = 10;
     
     // PROBLEM: Side effects in macros
@@ -177,7 +177,7 @@ void macro_hell() {
 }
 
 // PROBLEM: Undefined behavior showcase
-void undefined_behavior_hell() {
+void undefined_behavior_headache() {
     // PROBLEM: Signed integer overflow
     int max_int = 2147483647; // PROBLEM: Maximum 32-bit signed integer
     max_int++;  // PROBLEM: Overflow causes undefined behavior (not wrap-around!)
@@ -210,7 +210,7 @@ void* thread_function(void* arg) {
     return NULL;
 }
 
-void race_condition_hell() {
+void race_condition_headache() {
     pthread_t threads[10]; // PROBLEM: 10 threads
     
     for(int i = 0; i < 10; i++) {
@@ -223,7 +223,7 @@ void race_condition_hell() {
 }
 
 // PROBLEM: File handling disasters
-void file_hell() {
+void file_headache() {
     FILE *fp = fopen("nonexistent.txt", "r"); // PROBLEM: File probably doesn't exist
     // PROBLEM: No error checking - fp is probably NULL
     
@@ -244,18 +244,18 @@ void file_hell() {
 int main() {
     printf("⚡ C NIGHTMARE STARTING ⚡\n");
     
-    buffer_overflow_hell();      // PROBLEM: Buffer overflows and stack corruption
-    memory_leak_hell();          // PROBLEM: Memory leaks via malloc without free
-    use_after_free_hell();       // PROBLEM: Use-after-free and double-free
-    dangling_pointer_hell();     // PROBLEM: Pointers to destroyed stack memory
-    array_bounds_hell();         // PROBLEM: Array bounds violations
-    pointer_arithmetic_hell();   // PROBLEM: Wild pointer arithmetic
-    string_hell();               // PROBLEM: String handling without bounds checking
-    function_pointer_hell();     // PROBLEM: NULL and invalid function pointer calls
-    macro_hell();                // PROBLEM: Macro side effects and expansion issues
-    undefined_behavior_hell();   // PROBLEM: Integer overflow, division by zero, NULL deref
-    race_condition_hell();       // PROBLEM: Unsynchronized access to shared data
-    file_hell();                 // PROBLEM: File operations without error checking
+    buffer_overflow_headache();      // PROBLEM: Buffer overflows and stack corruption
+    memory_leak_headache();          // PROBLEM: Memory leaks via malloc without free
+    use_after_free_headache();       // PROBLEM: Use-after-free and double-free
+    dangling_pointer_headache();     // PROBLEM: Pointers to destroyed stack memory
+    array_bounds_headache();         // PROBLEM: Array bounds violations
+    pointer_arithmetic_headache();   // PROBLEM: Wild pointer arithmetic
+    string_headache();               // PROBLEM: String handling without bounds checking
+    function_pointer_headache();     // PROBLEM: NULL and invalid function pointer calls
+    macro_headache();                // PROBLEM: Macro side effects and expansion issues
+    undefined_behavior_headache();   // PROBLEM: Integer overflow, division by zero, NULL deref
+    race_condition_headache();       // PROBLEM: Unsynchronized access to shared data
+    file_headache();                 // PROBLEM: File operations without error checking
     
     printf("🎭 C CHAOS COMPLETE 🎭\n");
     

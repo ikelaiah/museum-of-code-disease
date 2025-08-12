@@ -167,12 +167,12 @@ $a,      $b,     $c
 sub main {
     print "🐪 PERL NIGHTMARE STARTING 🐪\n";
     
-    regex_hell();           # PROBLEM: Regex catastrophic backtracking
-    sigil_chaos();          # PROBLEM: Sigil confusion and context switching
-    special_vars_hell();    # PROBLEM: Global special variable abuse
-    reference_hell();       # PROBLEM: Complex reference and typeglob manipulation
-    file_hell();            # PROBLEM: File handle leaks and global handles
-    eval_hell();            # PROBLEM: String eval and symbolic references
+    regex_headache();           # PROBLEM: Regex catastrophic backtracking
+    sigil_chaos();              # PROBLEM: Sigil confusion and context switching
+    special_vars_headache();    # PROBLEM: Global special variable abuse
+    reference_headache();       # PROBLEM: Complex reference and typeglob manipulation
+    file_headache();            # PROBLEM: File handle leaks and global handles
+    eval_headache();            # PROBLEM: String eval and symbolic references
     
     # PROBLEM: The ultimate Perl one-liner disasters
     map{print$_}sort{$a<=>$b}grep{/\d/}split//,join'',<>; # PROBLEM: Completely unreadable
