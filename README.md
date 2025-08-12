@@ -19,17 +19,17 @@ This repo curates intentionally awful code samples (“exhibits”) across langu
 
 ---
 
-## Why this exists
+## Why this exists 🤔
 
-- **Learn by contrast.** Seeing *what not to do* sharpens code review instincts and improves architectural taste.
-- **Have some fun.** A little gallows humour about software disasters keeps things memorable.
-- **Shareable teaching aids.** Drop an exhibit into a brown-bag session or code kata and refactor together.
+- **Learn by contrast.** 👀 Seeing *what not to do* sharpens code review instincts and improves architectural taste.
+- **Have some fun.** 😂 A little gallows humour about software disasters keeps things memorable.
+- **Shareable teaching aids.** 🎓 Drop an exhibit into a brown-bag session or code kata and refactor together.
 
 This project’s name is a playful nod to UNSW’s **Museum of Human Disease**—a long-running educational collection in Sydney. We’re **not affiliated** with UNSW or the museum. :contentReference[oaicite:0]{index=0}
 
 ---
 
-## What’s inside
+## What's inside 📦
 
 ```bash
 museum-of-code-disease/
@@ -66,45 +66,45 @@ museum-of-code-disease/
 
 ---
 
-## Current Exhibits
+## Current Exhibits 🏛️
 
-- **Python ex-001**: Global chaos, eval() dangers, SQL injection
-- **Python ex-002**: Parentheses ceremony (formatting terrorism)  
-- **Java ex-001**: Bracket alignment terrorism (Python-style), resource leaks, SQL injection
-- **Rust ex-001**: Borrow checker destruction, unsafe code paradise, memory leaks
-- **JavaScript ex-001**: Type coercion hell, prototype pollution, callback pyramid
-- **FreePascal ex-001**: Memory leaks, race conditions, goto abuse
-- **SQL ex-001**: Absolute NATURAL JOIN chaos, injection vulnerabilities
+- **🐍 Python ex-001**: Global chaos, eval() dangers, SQL injection
+- **🐍 Python ex-002**: Parentheses ceremony (formatting terrorism)  
+- **☕ Java ex-001**: Bracket alignment terrorism (Python-style), resource leaks, SQL injection
+- **🦀 Rust ex-001**: Borrow checker destruction, unsafe code paradise, memory leaks
+- **🎭 JavaScript ex-001**: Type coercion hell, prototype pollution, callback pyramid
+- **🔧 FreePascal ex-001**: Memory leaks, race conditions, goto abuse
+- **🗄️ SQL ex-001**: Absolute NATURAL JOIN chaos, injection vulnerabilities
 
 ---
 
-## Exhibit template
+## Exhibit template 📋
 
-## The specimen
+## The specimen 🦠
 
 Path: `{folder}/ex-{id}-{slug}.{ext}`
 
-## The autopsy
+## The autopsy 🔬
 
 Path: `{folder}/ex-{id}-{slug}-autopsy.{ext}`
 
 Also include:
 
-- Symptoms (what’s wrong)
-- Safer rewrite (optional)
-- Teaching notes
+- 🩺 Symptoms (what's wrong)
+- ✅ Safer rewrite (optional)
+- 📚 Teaching notes
 
 ---
 
-## Contributing
+## Contributing 🤝
 
 PRs welcome! Please follow the vibe:
 
-1. **Keep it educational.** No calling out individuals or companies. No doxxing.
-2. **Isolate danger.** Don’t include secrets, real endpoints, or irreversible commands.
-3. **Explain the harm.** Add a checklist that teaches *why* the code is bad.
-4. **Small, focused exhibits.** One main theme per exhibit (it’s okay to sprinkle minor sins).
-5. **Naming:** `ex-XYZ-short-slug.ext` with a matching notes file.
+1. **Keep it educational.** 🎓 No calling out individuals or companies. No doxxing.
+2. **Isolate danger.** 🔒 Don't include secrets, real endpoints, or irreversible commands.
+3. **Explain the harm.** 💡 Add a checklist that teaches *why* the code is bad.
+4. **Small, focused exhibits.** 🎯 One main theme per exhibit (it's okay to sprinkle minor sins).
+5. **Naming:** 📝 `ex-XYZ-short-slug.ext` with a matching notes file.
 
 Before merging, we’ll sanity-check that an exhibit:
 
@@ -114,32 +114,32 @@ Before merging, we’ll sanity-check that an exhibit:
 
 ---
 
-## Usage (for workshops)
+## Usage (for workshops) 🎪
 
-* **Show the specimen.** Let people cringe for 2–3 minutes.
-* **Ask for smells.** Collect observations before revealing the checklist.
-* **Time-boxed refactor.** 15–20 minutes, pairs or groups.
-* **Debrief.** Compare approaches and tradeoffs.
-
----
-
-## Code of Conduct
-
-- Be kind. We’re here to learn.
-- This repo exists **for fun and education**—it’s **not** about shaming anyone’s past code. Most of us have written versions of these exhibits!
+* **Show the specimen.** 😱 Let people cringe for 2–3 minutes.
+* **Ask for smells.** 👃 Collect observations before revealing the checklist.
+* **Time-boxed refactor.** ⏰ 15–20 minutes, pairs or groups.
+* **Debrief.** 🗣️ Compare approaches and tradeoffs.
 
 ---
 
-## License
+## Code of Conduct 💖
 
-- This project: MIT
-- Code samples: MIT
+- Be kind. 🤗 We're here to learn.
+- This repo exists **for fun and education** 🎉—it's **not** about shaming anyone's past code. Most of us have written versions of these exhibits! 😅
 
 ---
 
-## Inspiration
+## License 📄
 
-* **Museum of Human Disease (UNSW, founded 1959)**—an educational collection helping people understand health and disease. Again, **no affiliation**; we just love the museum metaphor. ([UNSW Sites][1])
+- This project: MIT ✅
+- Code samples: MIT ✅
+
+---
+
+## Inspiration 💡
+
+* **Museum of Human Disease (UNSW, founded 1959)** 🏥—an educational collection helping people understand health and disease. Again, **no affiliation**; we just love the museum metaphor. 🏛️ ([UNSW Museum of Human Disease][1])
 
 
-[1]: https://www.unsw.edu.au/medicine-health/disease-museum/about?utm_source=chatgpt.com "About us | Museum of Human disease - UNSW Sydney"
+[1]: https://www.unsw.edu.au/medicine-health/disease-museum/about "About us | Museum of Human disease - UNSW Sydney"
