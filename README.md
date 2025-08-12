@@ -4,7 +4,6 @@
 ![Code Quality](https://img.shields.io/badge/code%20quality-💩%20TERRIBLE-brown?style=for-the-badge)
 ![Educational Value](https://img.shields.io/badge/educational%20value-📚%20HIGH-brightgreen?style=for-the-badge)
 ![Therapy Required](https://img.shields.io/badge/therapy%20required-🛋️%20PROBABLY-orange?style=for-the-badge)
-
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen)
 ![Do Not Use](https://img.shields.io/badge/production%20use-❌%20FORBIDDEN-red)
