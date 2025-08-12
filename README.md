@@ -25,8 +25,6 @@ This repo curates intentionally awful code samples (“exhibits”) across langu
 - **Have some fun.** 😂 A little gallows humour about software disasters keeps things memorable.
 - **Shareable teaching aids.** 🎓 Drop an exhibit into a brown-bag session or code kata and refactor together.
 
-This project’s name is a playful nod to UNSW’s **Museum of Human Disease**—a long-running educational collection in Sydney. We’re **not affiliated** with UNSW or the museum. :contentReference[oaicite:0]{index=0}
-
 ---
 
 ## What's inside 📦
