@@ -8,7 +8,7 @@ import java.sql.*;                                                              
 import java.net.*;                                                                     // wildcard paradise
 import java.lang.reflect.*;                                                            // reflection for chaos
 import java.util.concurrent.*;                                                         // threading disasters
-import static java.lang.System.*;                                                     // static import abuse
+import static java.lang.System.*;                                                      // static import abuse
 
 public class NightmareJava                                                             {
     
@@ -45,71 +45,71 @@ public class NightmareJava                                                      
                 Class<?> clazz = Class.forName("java.lang.String");                   // pointless reflection
                 Method method = clazz.getMethod("valueOf", Object.class);             // more reflection
                 return (T) method.invoke(null, args[0]);                              // unchecked cast
-            }
-        }
+                                                                                       }
+                                                                                       }
         catch (Exception e)                                                            {
             // Swallow all exceptions
-        }
+                                                                                       }
         return null;                                                                   // null return
-    }
+                                                                                       }
     
     // File chaos with no resource management
-    public static void fileDisaster(String filename)                                  {
+    public static void fileDisaster(String filename)                                   {
         try                                                                            {
-            FileWriter fw = new FileWriter(filename);                                 // no try-with-resources
-            BufferedWriter bw = new BufferedWriter(fw);                               // another resource leak
-            PrintWriter pw = new PrintWriter(bw);                                     // triple resource leak
+            FileWriter fw = new FileWriter(filename);                                  // no try-with-resources
+            BufferedWriter bw = new BufferedWriter(fw);                                // another resource leak
+            PrintWriter pw = new PrintWriter(bw);                                      // triple resource leak
             
-            for (int i = 0; i < 100; i++)                                             {
-                pw.println("Line " + i + " with random: " + Math.random());          // no flush
+            for (int i = 0; i < 100; i++)                                              {
+                pw.println("Line " + i + " with random: " + Math.random());            // no flush
                 if (i % 10 == 0)                                                       {
                     pw.flush();                                                        // sporadic flushing
-                }
-            }
+                                                                                       }
+                                                                                       }
             // No close() calls - leak all file handles!
-        }
+                                                                                       }
         catch (IOException e)                                                          {
             // Ignore IO errors
-        }
-    }
+                                                                                       }
+                                                                                       }
     
     // Thread chaos with race conditions
-    public static void spawnChaos()                                                   {
-        for (int threadNum = 0; threadNum < 10; threadNum++)                          {
-            Thread t = new Thread(new Runnable()                                      {
+    public static void spawnChaos()                                                    {
+        for (int threadNum = 0; threadNum < 10; threadNum++)                           {
+            Thread t = new Thread(new Runnable()                                       {
                 @Override
                 public void run()                                                      {
                     while (!STOP)                                                      {
                         synchronized (GLOBAL_CHAOS)                                    {
                             GLOBAL_CHAOS.put("thread", Thread.currentThread().getName());
-                        }
+                                                                                       }
                         // Race condition outside sync block
                         a++; b++; c++; d++; e++; f++; g++; h++; i++; j++;              // no synchronization
                         
                         try                                                            {
                             Thread.sleep(1);                                           // blocking in loop
-                        }
+                                                                                       }
                         catch (InterruptedException e)                                 {
                             // Ignore interruption
-                        }
-                    }
-                }
-            });
+                                                                                       }
+                                                                                       }
+                                                                                       }
+                                                                                       });
             t.start();                                                                 // start immediately
-            THREAD_LEAKS.add(t);                                                      // keep reference but never join
-        }
-    }
+            THREAD_LEAKS.add(t);                                                       // keep reference but never join
+                                                                                       }
+                                                                                       }
     
     // Network disaster with no timeouts
-    public static String httpChaos(String url)                                        {
+    public static String httpChaos(String url)                                         {
         try                                                                            {
-            URL u = new URL(url + "?id=1' OR '1'='1");                                // URL injection
-            HttpURLConnection conn = (HttpURLConnection) u.openConnection();          // no timeout
+            URL u = new URL(url + "?id=1' OR '1'='1");                                 // URL injection
+            HttpURLConnection conn = (HttpURLConnection) u.openConnection();           // no timeout
             conn.setRequestMethod("GET");                                              // 
-            conn.setRequestProperty("User-Agent", "JavaChaos/1.0");                  // custom user agent
+            conn.setRequestProperty("User-Agent", "JavaChaos/1.0");                    // custom user agent
             
             BufferedReader reader = new BufferedReader(
-                new InputStreamReader(conn.getInputStream())                          ); // no charset specified
+                new InputStreamReader(conn.getInputStream())                           ); // no charset specified
             
             StringBuilder response = new StringBuilder();                              // 
             String line;                                                               // 
@@ -151,37 +151,37 @@ public class NightmareJava                                                      
     
     // Collection chaos with type safety violations
     @SuppressWarnings("unchecked")                                                     // suppress all warnings
-    public static void collectionDisaster()                                           {
-        List rawList = new ArrayList();                                               // raw type usage
-        rawList.add("String");                                                        // 
+    public static void collectionDisaster()                                            {
+        List rawList = new ArrayList();                                                // raw type usage
+        rawList.add("String");                                                         // 
         rawList.add(42);                                                               // mixed types
         rawList.add(new Date());                                                       // more mixed types
         rawList.add(null);                                                             // null in collection
         
         for (Object obj : rawList)                                                     {
             String str = (String) obj;                                                 // unsafe cast
-            out.println(str.toUpperCase());                                           // NPE waiting to happen
-        }
+            out.println(str.toUpperCase());                                            // NPE waiting to happen
+                                                                                       }
         
-        Map<String, Object> map = new HashMap<>();                                    // 
-        map.put(null, "null key");                                                    // null key
-        map.put("null", null);                                                        // null value
-        map.put("", "empty key");                                                     // empty key
+        Map<String, Object> map = new HashMap<>();                                     // 
+        map.put(null, "null key");                                                     // null key
+        map.put("null", null);                                                         // null value
+        map.put("", "empty key");                                                      // empty key
         
         // Concurrent modification
         for (String key : map.keySet())                                                {
-            if (key != null && key.isEmpty())                                         {
+            if (key != null && key.isEmpty())                                          {
                 map.remove(key);                                                       // modify while iterating
-            }
-        }
-    }
+                                                                                       }
+                                                                                       }
+                                                                                       }
     
     // Main method that orchestrates the chaos
-    public static void main(String[] args)                                            {
-        out.println("Starting Java Nightmare...");                                    // 
+    public static void main(String[] args)                                             {
+        out.println("Starting Java Nightmare...");                                     // 
         
         // Initialize confusable variables
-        l1 = "l1"; O0 = "O0"; I1 = "I1";                                              // confusing assignments
+        l1 = "l1"; O0 = "O0"; I1 = "I1";                                               // confusing assignments
         
         // Spawn chaos
         spawnChaos();                                                                  // start racing threads
@@ -191,9 +191,9 @@ public class NightmareJava                                                      
         fileDisaster("/tmp/chaos.log");                                                // more leaks
         
         // Network chaos
-        String response = httpChaos("http://example.com");                            // network call
+        String response = httpChaos("http://example.com");                             // network call
         out.println("Response length: " + 
-                   (response != null ? response.length() : "null"));                  // null check
+                   (response != null ? response.length() : "null"));                   // null check
         
         // Database chaos
         sqlChaos("admin' --", "password");                                             // SQL injection
@@ -208,10 +208,10 @@ public class NightmareJava                                                      
         InnerChaos.mutateGlobals();                                                    // global mutation
         
         // Never stop threads or clean up resources
-        out.println("Chaos complete! Threads: " + THREAD_LEAKS.size());              // 
-        out.println("Global state: a=" + a + ", CHAOS size=" + GLOBAL_CHAOS.size()); // 
+        out.println("Chaos complete! Threads: " + THREAD_LEAKS.size());  
+        out.println("Global state: a=" + a + ", CHAOS size=" + GLOBAL_CHAOS.size()); 
         
         // Exit without cleanup
         System.exit(0);                                                                // force exit
-    }
-}
+                                                                                       }
+                                                                                       }

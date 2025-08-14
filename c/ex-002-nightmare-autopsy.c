@@ -130,7 +130,7 @@ int global_multiplier = 2;           // PROBLEM: Global variable
 
 // PROBLEM: Macro with hidden dependencies
 #define HIDDEN_DEPENDENCY(x) ((x) + secret_global_var)  // PROBLEM: Uses undeclared variable
-int secret_global_var = 666;        // PROBLEM: Hidden dependency declared later
+int secret_global_var = 888;        // PROBLEM: Hidden dependency declared later
 // FIX: Declare dependencies before use; avoid hidden dependencies
 
 // PROBLEM: Preprocessor token pasting chaos

@@ -113,7 +113,7 @@ int global_multiplier = 2;
 
 // Macro with hidden dependencies
 #define HIDDEN_DEPENDENCY(x) ((x) + secret_global_var)
-int secret_global_var = 666;
+int secret_global_var = 888;
 
 // Preprocessor token pasting chaos
 #define MAKE_FUNCTION(name) \

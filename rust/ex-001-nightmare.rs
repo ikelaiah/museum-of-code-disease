@@ -52,7 +52,7 @@ impl<'a, 'b, 'c> LifetimeNightmare<'a, 'b, 'c> {
         self.more_data.push_str(" MUTATED");                       // mutate borrowed data
         unsafe {                                                    // unsafe block party
             GLOBAL_CHAOS += 1;                                     // global mutation
-            *self.raw_ptr = 666;                                   // dereference raw pointer
+            *self.raw_ptr = 888;                                   // dereference raw pointer
         }
         forget(take(&mut self.leaked_box));                        // MEMORY LEAK!
         self.data                                                   // return borrowed data
@@ -225,7 +225,7 @@ unsafe fn pointer_chaos() {
 // Main function that orchestrates maximum chaos
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    println!("🦀 RUST NIGHTMARE STARTING - PREPARE FOR CHAOS! 🦀");
+    println!("🦀 RUST CHALLENGE STARTING - PREPARE FOR CHAOS! 🦀");
     
     // Initialize global chaos
     unsafe {

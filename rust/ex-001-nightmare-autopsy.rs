@@ -46,7 +46,7 @@ impl<'a, 'b, 'c> LifetimeNightmare<'a, 'b, 'c> {
         self.more_data.push_str(" MUTATED");                       // PROBLEM: Mutate borrowed data
         unsafe {
             GLOBAL_CHAOS += 1;                                     // PROBLEM: Race condition
-            *self.raw_ptr = 666;                                   // PROBLEM: Dereference raw pointer
+            *self.raw_ptr = 888;                                   // PROBLEM: Dereference raw pointer
         }
         forget(take(&mut self.leaked_box));                        // PROBLEM: Intentional memory leak!
         self.data
