@@ -157,18 +157,6 @@ begin
   // No q.Free/t.Free/c.Free; no t.Commit/rollback -> leaks + locks
 end;
 
-procedure VariantWeirdness;
-var
-  chaos: TChaos;
-begin
-  gAnything := 'abc';                         // Variant string
-  gAnything := gAnything + 123;               // Implicit type juggling at runtime
-  chaos.i := 42;                              // Touch one arm of variant record
-  P := @chaos;                                // Assign pointer to global P (a Longint!) -> type error
-  ZZ := chaos.i;                              // Write via alias; surprises readers
-  BadTypedConst[0] := ZZ;                     // Mutate a "constant" thanks to {$J+}
-end;
-
 procedure MakeRaces;
 var
   ths: array of TBadThread;
@@ -216,7 +204,6 @@ begin
     s := BadGet('http://example.com');        // No TLS verify/timeouts; leaks
     Spaghetti;                                // Deep nesting, goto, leaks
     PointerMayhem;                            // Memory leak
-    VariantWeirdness;                         // Type juggling + aliasing
   end;
 end;
 
