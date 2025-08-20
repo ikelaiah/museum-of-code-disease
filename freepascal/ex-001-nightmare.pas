@@ -164,6 +164,18 @@ begin
   // forget commits, closes, frees; leak connection objects
 end;
 
+procedure VariantWeirdness;
+var
+  chaos: TChaos;
+begin
+  gAnything := 'abc';
+  gAnything := gAnything + 123;    // implicit conversions at runtime, yay
+  chaos.i := 42;
+  P := @chaos;                     // nonsense pointer aliasing
+  ZZ := chaos.i;                   // write through absolute alias
+  BadTypedConst[0] := ZZ;          // mutate a "constant"
+end;
+
 procedure MakeRaces;
 var
   ths: array of TBadThread;
@@ -211,6 +223,7 @@ begin
     s := BadGet('http://example.com');
     Spaghetti;
     PointerMayhem;
+    VariantWeirdness;
   end;
 end;
 
