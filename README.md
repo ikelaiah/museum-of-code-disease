@@ -1,70 +1,35 @@
 # Museum of Code Disease 🧫
 
-![Danger Level](https://img.shields.io/badge/danger%20level-☢️%20MAXIMUM-red?style=for-the-badge)
-![Code Quality](https://img.shields.io/badge/code%20quality-💩%20TERRIBLE-brown?style=for-the-badge)
-![Educational Value](https://img.shields.io/badge/educational%20value-📚%20HIGH-brightgreen?style=for-the-badge)
-![Therapy Required](https://img.shields.io/badge/therapy%20required-🛋️%20PROBABLY-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/license-MIT-blue)
-![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen)
-![Do Not Use](https://img.shields.io/badge/production%20use-❌%20FORBIDDEN-red)
-![Cringe Factor](https://img.shields.io/badge/cringe%20factor-😱%20MAXIMUM-purple)
+![Danger Level](https://img.shields.io/badge/danger%20level-☢️%20MAXIMUM-FFD600?style=for-the-badge&labelColor=1f2937)
+![Code Quality](https://img.shields.io/badge/code%20quality-💩%20TERRIBLE-374151?style=for-the-badge&labelColor=1f2937)
+![Therapy Required](https://img.shields.io/badge/therapy%20required-🛋️%20PROBABLY-273141?style=for-the-badge&labelColor=1f2937)
+![License](https://img.shields.io/badge/license-MIT-2563EB?style=for-the-badge&labelColor=1f2937)
+![Do Not Use](https://img.shields.io/badge/production%20use-❌%20FORBIDDEN-7F1D1D?style=for-the-badge&labelColor=1f2937)
+![Cringe Factor](https://img.shields.io/badge/cringe%20factor-😱%20MAXIMUM-A855F7?style=for-the-badge&labelColor=1f2937)
+![Educational Value](https://img.shields.io/badge/educational%20value-📚%20HIGH-2E8C71?style=for-the-badge&labelColor=1f2937)
+![Contributions](https://img.shields.io/badge/contributions-welcome-10B981?style=for-the-badge&labelColor=1f2937)
+
 
 **Counterexamples for fun & education.** 
 
 This repo curates intentionally awful code samples (“exhibits”) across languages to help developers spot anti-patterns, sniff out smells, and practise refactoring. It’s a **teaching museum**, not a wall of shame.
 
-> ⚠️ **Safety first:** Exhibits are insecure, leaky, brittle, and misleading **by design**.  
+> [!WARNING]  
+> **Safety first:** Exhibits are insecure, leaky, brittle, and misleading **by design**.  
 > Do **not** run them in production, against real services, or anywhere you care about.
 
 ---
 
-## Why this exists 🤔
+## Why this exists 
 
-- **Learn by contrast.** 👀 Seeing *what not to do* sharpens code review instincts and improves architectural taste.
-- **Have some fun.** 😂 A little gallows humour about software disasters keeps things memorable.
-- **Shareable teaching aids.** 🎓 Drop an exhibit into a brown-bag session or code kata and refactor together.
+- **Learn by contrast.** Seeing *what not to do* sharpens code review instincts and improves architectural taste.
+- **Have some fun.** A little gallows humour about software disasters keeps things memorable.
+- **Shareable teaching aids.** Drop an exhibit into a brown-bag session or code kata and refactor together.
 
 ---
 
-## What's inside 📦
-
-```bash
-museum-of-code-disease/
-├─ c/
-│  ├─ ex-001-nightmare.c
-│  ├─ ex-001-nightmare-autopsy.c
-│  ├─ ex-002-nightmare.c
-│  └─ ex-002-nightmare-autopsy.c
-├─ csharp/
-│  ├─ ex-001-nightmare.cs
-│  └─ ex-001-nightmare-autopsy.cs
-├─ freepascal/
-│  ├─ ex-001-nightmare.pas
-│  └─ ex-001-nightmare-autopsy.pas
-├─ java/
-│  ├─ ex-001-nightmare.java
-│  └─ ex-001-nightmare-autopsy.java
-├─ javascript/
-│  ├─ ex-001-nightmare.js
-│  └─ ex-001-nightmare-autopsy.js
-├─ perl/
-│  ├─ ex-001-nightmare.pl
-│  └─ ex-001-nightmare-autopsy.pl
-├─ python/
-│  ├─ ex-001-nightmare.py
-│  ├─ ex-001-nightmare-autopsy.py
-│  ├─ ex-002-lipsy.py
-│  └─ ex-002-lipsy-autopsy.py
-├─ rust/
-│  ├─ ex-001-nightmare.rs
-│  └─ ex-001-nightmare-autopsy.rs
-├─ sql/
-│  ├─ ex-001-evil-joins.sql
-│  └─ ex-001-evil-joins-autopsy.sql
-├─ CONTRIBUTING.md
-├─ LICENSE.md
-└─ README.md
-```
+## What's inside 
+For the full catalog of exhibits and autopsies, see the index: [INDEX.md](./INDEX.md)
 
 - Each exhibit includes:
 
@@ -72,15 +37,131 @@ museum-of-code-disease/
   - a short **“What’s wrong here?”** checklist,
   - optionally a **safer rewrite** for contrast.
 
+## Sneak peek: C format string bug
+
+Bad (specimen) from `c/ex-011-format-string.c`:
+```c
+// Dangerous: Format String Vulnerability
+// Build: gcc -g ex-011-format-string.c -o fmt && ./fmt "%x %x %x"
+// Ref: OWASP Format String Attack
+#include <stdio.h>
+
+int main(int argc, char** argv){
+    char buf[128];
+    const char* user = (argc>1)?argv[1]:"hello";
+    // VULN: user input as format string
+    printf(user);
+    printf("\n");
+    snprintf(buf, sizeof(buf), user); // also dangerous
+    printf("snprintf result: %s\n", buf);
+    return 0;
+}
+```
+
+Autopsy (fix) from `c/ex-011-format-string-autopsy.c`:
+```c
+// Fix: Treat user input as data, not format string
+#include <stdio.h>
+
+int main(int argc, char** argv){
+    char buf[128];
+    const char* user = (argc>1)?argv[1]:"hello";
+    printf("%s\n", user);
+    snprintf(buf, sizeof(buf), "%s", user);
+    printf("snprintf result: %s\n", buf);
+    return 0;
+}
+```
+
+Tip: also validate input and cap lengths (e.g., snprintf) in real programs.
+
+### Sneak peek: Node.js command injection
+
+Bad (specimen) from `javascript/ex-011-command-injection.js`:
+```js
+// Dangerous: Command Injection in Node.js
+// Run: node javascript/ex-011-command-injection.js "&& echo PWNED"
+const { exec } = require('child_process');
+const user = process.argv[2] || 'status';
+// VULN: concatenation passed to shell
+exec('git ' + user, (e, out, err) => {
+  if (e) { console.error(String(e)); return; }
+  console.log(out || err);
+});
+```
+
+Autopsy (fix) from `javascript/ex-011-command-injection-autopsy.js`:
+```js
+// Fix: Use spawn with argument array and no shell
+const { spawn } = require('child_process');
+const arg = process.argv[2] || 'status';
+const allowed = new Set(['status','log','rev-parse']);
+const cmd = 'git';
+const args = allowed.has(arg) ? [arg] : ['status'];
+const p = spawn(cmd, args, { shell: false });
+
+p.stdout.on('data', d => process.stdout.write(d));
+p.stderr.on('data', d => process.stderr.write(d));
+p.on('close', (code) => process.exit(code));
+```
+
+### Sneak peek: Python YAML unsafe load
+
+Bad (specimen) aligned with `python/ex-011-yaml-unsafe-load.py`:
+```python
+# Dangerous: yaml.load with unsafe loader
+import yaml, sys
+payload = sys.argv[1] if len(sys.argv)>1 else 'a: 1'
+obj = yaml.load(payload, Loader=yaml.Loader)  # VULNERABLE
+print(obj)
+```
+
+Autopsy (fix):
+```python
+import yaml, sys
+payload = sys.argv[1] if len(sys.argv)>1 else 'a: 1'
+obj = yaml.safe_load(payload)  # only simple types
+print(obj)
+```
+
+### Sneak peek: SQL injection (Python sqlite3)
+
+Bad (specimen) extracted from `python/ex-001-nightmare.py` (`get_user`):
+```python
+import sqlite3
+def get_user(password_guess, name_guess):
+    con = sqlite3.connect(":memory:")
+    cur = con.cursor()
+    try:
+        q = "SELECT * FROM usr WHERE nm = '" + name_guess + "' AND pwd = '" + password_guess + "';"
+        res = cur.execute(q).fetchall()  # injection
+        return res[0]
+    finally:
+        con.close()
+```
+
+Autopsy (fix):
+```python
+import sqlite3
+def get_user_safe(password_guess, name_guess):
+    con = sqlite3.connect(":memory:")
+    cur = con.cursor()
+    try:
+        res = cur.execute(
+            "SELECT * FROM usr WHERE nm = ? AND pwd = ?",
+            (name_guess, password_guess)
+        ).fetchall()
+        return res[0] if res else None
+    finally:
+        con.close()
+```
+
+Tip: validate inputs, prefer parameterized queries, and avoid spawning shells.
+
 ---
 
-## Current Exhibits 🏛️
+## Some Exhibits 
 
-- **⚙️ [C ex-001](c/ex-001-nightmare.c)**: Memory management nightmares, buffer overflows, pointer chaos
-- **⚙️ [C ex-002](c/ex-002-nightmare.c)**: Advanced memory corruption, race conditions, undefined behavior
-- **🔷 [C# ex-001](csharp/ex-001-nightmare.cs)**: Resource leaks, exception handling disasters, SQL injection
-- **🔧 [FreePascal ex-001](freepascal/ex-001-nightmare.pas)**: Memory leaks, race conditions, goto abuse
-- **☕ [Java ex-001](java/ex-001-nightmare.java)**: Bracket alignment terrorism (Python-style), resource leaks, SQL injection
 - **🎭 [JavaScript ex-001](javascript/ex-001-nightmare.js)**: Type coercion headache, prototype pollution, callback pyramid
 - **🐪 [Perl ex-001](perl/ex-001-nightmare.pl)**: Regular expression madness, cryptic syntax abuse, global variables
 - **🐍 [Python ex-001](python/ex-001-nightmare.py)**: Global chaos, eval() dangers, SQL injection
