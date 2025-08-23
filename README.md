@@ -2,10 +2,10 @@
 
 ![Danger Level](https://img.shields.io/badge/danger%20level-☢️%20MAXIMUM-FFD600?style=for-the-badge&labelColor=1f2937)
 ![Code Quality](https://img.shields.io/badge/code%20quality-💩%20TERRIBLE-374151?style=for-the-badge&labelColor=1f2937)
-![License](https://img.shields.io/badge/license-MIT-2563EB?style=for-the-badge&labelColor=1f2937)
 ![Do Not Use](https://img.shields.io/badge/production%20use-❌%20FORBIDDEN-7F1D1D?style=for-the-badge&labelColor=1f2937)
 ![Cringe Factor](https://img.shields.io/badge/cringe%20factor-😱%20MAXIMUM-A855F7?style=for-the-badge&labelColor=1f2937)
 ![Educational Value](https://img.shields.io/badge/educational%20value-📚%20HIGH-2E8C71?style=for-the-badge&labelColor=1f2937)
+![License](https://img.shields.io/badge/license-MIT-2563EB?style=for-the-badge&labelColor=1f2937)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-10B981?style=for-the-badge&labelColor=1f2937)
 
 
